@@ -1,0 +1,21 @@
+s = 'bbbgggbgg'
+c1 = 'b'
+c2 = 'g'
+c = 0
+i1 = i2 = 0
+while i1 < len(s) and i2 < len(s):
+    while i1 < len(s) and s[i1] != c1:
+        i1 += 1
+    while i2 < len(s) and s[i2] != c2:
+        i2 += 1
+    if i1 < len(s) and i2 < len(s):
+        d = abs(i2 - i1)
+        if d <= 3:
+            c += 1
+            i1 += 1
+            i2 += 1
+        elif i1 < i2:
+            i1 += 1
+        else:
+            i2 += 1
+print(c)
